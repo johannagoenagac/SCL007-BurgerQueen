@@ -2,27 +2,34 @@
     
     max-width:50% ;
     margin: auto; 
-    height:600px ;
+    height: static ;
    
 }
 
-#sections{
-    background-color: rgb(241, 235, 235);
-}
 
 
 #waitersBtn, #kitchenBtn{
     border-radius: 5px;
     margin: 2rem;
-    background-color: rgb(255, 174, 0) ;
+    font-size: 30px;
     color: white;
     font-family: sans-serif;
-    width: 6rem;
-    height: 3rem;
+    font-family: sans-serif;
 }
+
+
 
 #clientName{
-    color: rgb(165, 41, 41);
+    color:white;
+    font-family: sans-serif;
 }
 
+#BtnsMenu{
+position: relative;
+} 
+
+.textOrder{
+    color: rgb(192, 58, 17);
+    font-family: sans-serif;
+}
 

@@ -7,10 +7,11 @@ class Navbar extends Component {
       <div className="App">
         
   <nav id="navbar">
-    <div class="nav-wrapper">
-      <a  href="./Navbar.js" class="brand-logo">Burguer Queen</a>
-      
-    </div>
+    <div className="nav-wrapper">
+      <a  href="./Navbar.js" className="brand-logo">Burguer Queen</a>
+      </div>
+
+      <img id="hamburguer" src="https://i.ibb.co/8KQBLQP/hamburger-25358-640.png" alt="hamburger-25358-640" border="0"></img>
   </nav>
 
       </div>
@@ -19,3 +20,4 @@ class Navbar extends Component {
 }
 
 export default Navbar;
+

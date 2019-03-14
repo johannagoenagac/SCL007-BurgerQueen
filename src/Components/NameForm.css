@@ -1,0 +1,14 @@
+#send{
+    border-radius: 5px;
+    margin-left: 0.5rem;
+    background-color: rgb(192, 58, 17);
+    color:white;
+}
+
+#client{
+    border: none;
+    border-bottom: 1px solid grey;
+    background-color: rgb(236, 228, 228);
+    text-align: center;
+    
+}

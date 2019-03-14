@@ -1,5 +1,13 @@
 .brand-logo{
+    margin-top: 2rem;
     color: rgb(165, 41, 41);
-    font-size: 30px;
+    font-size: 35px;
     font-family: sans-serif;
+  }
+
+#hamburguer{
+    width: 5rem;
+    height:3rem;
+    margin-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
   }

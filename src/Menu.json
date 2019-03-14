@@ -1,0 +1,94 @@
+{
+    "data": {
+        "breakfast": [
+            {
+                "type": "café americano",
+                "price": 500
+            },  
+            {
+                "type": "café con leche",
+                "price": 700
+            },
+            {
+                "type": "sandwich de jamón con queso",
+                "price": 1000
+            },
+            {
+                "type": "jugo Natural",
+                "price": 700
+            }
+        ],
+        "meal": [
+            
+                {
+                    "name": "hamburguesa simple",
+                    "type": "res",
+                    "price": 1500
+                },
+                {
+                    "name": "hamburguesa doble",
+                    "type": "res",
+                    "price": 2500
+                },
+                {
+                    "name": "hamburguesa simple",
+                    "type": "pollo",
+                    "price": 1500
+                },
+                {
+                    "name": "hamburguesa doble",
+                    "type": "pollo",
+                    "price": 2500
+                },
+                {
+                    "name": "hamburguesa simple",
+                    "type": "vegetariana",
+                    "price": 1500
+                },
+                {
+                    "name": "hamburguesa doble",
+                    "type": "vegetariana",
+                    "price": 2500
+                },
+            
+                {
+                    "name":"agregado hamburguesa",
+                    "type": "huevo",
+                    "price": 500
+                },
+                {
+                    "name":"agregado hamburguesa",
+                    "type": "queso",
+                    "price": 500
+                },
+            
+    
+                {
+                    "type": "papas fritas",
+                    "price": 500
+                },
+                {
+                    "type": "aros de cebolla",
+                    "precio": 500
+                },
+          
+                {
+                    "type": "agua 500ml",
+                    "price": 500
+                },
+                {
+                    "type": "agua 750ml",
+                    "price": 800
+                },
+                {
+                    "type": "gaseosa 500ml",
+                    "price": 700
+                },
+                {
+                    "type": "gaseosa 500ml",
+                    "price": 1000
+                }
+            
+        ]
+    }
+}

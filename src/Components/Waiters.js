@@ -11,10 +11,11 @@ class Waiters extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: '',
+            value: props.name,
             BtnBreak: false,
             BtnMeals: false,
-
+            handleChangeName:props.handleChangeName,
+            onNameSelected:props.onNameSelected,
         };
 
         this.handleClick = this.handleClick.bind(this);
@@ -29,7 +30,9 @@ class Waiters extends Component {
             value: event
         });
         this.props.onNameSelected(event)
-        document.getElementById("client").value = '';
+        
+        
+        // document.getElementById("clientName").value = '' ;
 
     }
 
@@ -57,42 +60,37 @@ class Waiters extends Component {
 
 
                     <div className="col-md-7">
+
                         <div id="waiters">
 
                             <h1 id="waitersBtn">Garzones</h1>
 
                             <div id="name">
                                 <NameForm
-                                    onClick={this.handleClick}
+                                    onClick={this.state.onNameSelected}
+                                    onChange={this.state.handleChangeName}
                                 />
                             </div>
 
-                            
-
                         </div>
-
 
                         <div className="container">
-                       
-                        <div id="BtnsMenu">
 
-                        
+                            <div id="BtnsMenu">
 
-                       
-                        <BtnBreakfast
-                            onClick={this.breakfastBtn} />
-                            {this.state.BtnBreak && <Breakfast />}
-                        
-
-                        
-                        <BtnMeal
-                            onClick={this.MealBtn} />
-                            {this.state.BtnMeals && <Meal />}
-                       
+                                <BtnBreakfast
+                                    onClick={this.breakfastBtn} />
+                                {this.state.BtnBreak && <Breakfast />}
 
 
-                        </div>
-                      
+                                <BtnMeal
+                                    onClick={this.MealBtn} />
+                                {this.state.BtnMeals && <Meal />}
+
+
+
+                            </div>
+
                         </div>
 
                     </div>
@@ -104,7 +102,44 @@ class Waiters extends Component {
 
                             <h2 id="kitchenBtn">Cocina</h2>
                             <p className="textOrder">Ingresando pedido de:</p>
-                            <p id="clientName">{this.state.value}</p>
+                            <p id="clientName">{this.props.name}</p>
+
+                            <table id="tableOrder"class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Producto</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Hamburguesa simple con queso</td>
+      <td>$2000</td>
+      <td ><img className="iconGarbage" src="https://i.ibb.co/JBJySWC/rubbish-bin.png" alt="rubbish-bin" border="0"/></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Papas Fritas</td>
+      <td>$500</td>
+      <td><img className="iconGarbage" src="https://i.ibb.co/JBJySWC/rubbish-bin.png" alt="rubbish-bin" border="0"/></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Bebida 350ml</td>
+      <td>$700</td>
+      <td><img className="iconGarbage" src="https://i.ibb.co/JBJySWC/rubbish-bin.png" alt="rubbish-bin" border="0"/></td>
+    </tr>
+    <tr>
+        <th scope="row">4</th>
+        <th>Total</th>
+        <th>$3200</th>
+    </tr>
+
+  </tbody>
+</table>
 
                         </div>
 

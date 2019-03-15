@@ -33,3 +33,11 @@ position: relative;
     font-family: sans-serif;
 }
 
+.table.table.table-dark{
+    background-color:rgb(165, 41, 41);
+}
+
+.iconGarbage{
+    width: 25px;
+    height: 25px;
+}

@@ -8,9 +8,9 @@ function NameForm (props) {
         <form >
          
            
-            <input id="client" type="text" placeholder="Nombre del cliente" />
+            <input id="client" type="text" value={props.name} placeholder="Nombre del cliente" onChange={props.onChange} />
           
-            <button id="send" type="button" onClick={()=>props.onClick(document.getElementById("client").value)}>Enviar</button> 
+            <button id="send" type="button" onClick={props.onClick}>Enviar</button> 
           
         </form>
 

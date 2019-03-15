@@ -8,10 +8,11 @@ class Navbar extends Component {
         
   <nav id="navbar">
     <div className="nav-wrapper">
-      <a  href="./Navbar.js" className="brand-logo">Burguer Queen</a>
+      <a  href="./Navbar.js" className="brand-logo">Burger Queen</a>
       </div>
 
-      <img id="hamburguer" src="https://i.ibb.co/8KQBLQP/hamburger-25358-640.png" alt="hamburger-25358-640" border="0"></img>
+  </nav>    
+  <nav id="navbar2"><img id="hamburguer" src="https://i.ibb.co/8KQBLQP/hamburger-25358-640.png" alt="hamburger-25358-640" border="0"></img>
   </nav>
 
       </div>

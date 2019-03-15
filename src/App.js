@@ -9,18 +9,27 @@ class App extends Component {
     super(props)
     this.state = {
       name: '',
+      nameC:'',
       
 };
-
-    this.receiveName = this.receiveName.bind(this);
     
+    this.receiveName = this.receiveName.bind(this);
+    this.handleChangeName= this.handleChangeName.bind(this);
   }
 
-  receiveName(name){
+  receiveName(){
     this.setState({
       ...this.state,
-      name: name
+      name: this.state.nameC,
     });
+  }
+
+  handleChangeName(event){
+    this.setState({
+      ...this.state,
+      nameC:event.target.value
+      
+    })
   }
 
   render() {
@@ -28,7 +37,11 @@ class App extends Component {
       <div className="App">
        
         <Navbar/>
-        <Waiters onNameSelected={this.receiveName}/>
+        <Waiters 
+        onNameSelected={this.receiveName}
+        handleChangeName={this.handleChangeName}
+        name={this.state.name}
+        />
       
     
       </div>

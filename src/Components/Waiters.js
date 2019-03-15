@@ -14,8 +14,8 @@ class Waiters extends Component {
             value: props.name,
             BtnBreak: false,
             BtnMeals: false,
-            handleChangeName:props.handleChangeName,
-            onNameSelected:props.onNameSelected,
+            handleChangeName: props.handleChangeName,
+            onNameSelected: props.onNameSelected,
         };
 
         this.handleClick = this.handleClick.bind(this);
@@ -30,8 +30,8 @@ class Waiters extends Component {
             value: event
         });
         this.props.onNameSelected(event)
-        
-        
+
+
         // document.getElementById("clientName").value = '' ;
 
     }
@@ -59,7 +59,7 @@ class Waiters extends Component {
                 <div className="row">
 
 
-                    <div className="col-md-7">
+                    <div className="col-md-6">
 
                         <div id="waiters">
 
@@ -96,7 +96,7 @@ class Waiters extends Component {
                     </div>
 
 
-                    <div className="col-md-5">
+                    <div className="col-md-6">
 
                         <div id="kitchen">
 
@@ -104,42 +104,43 @@ class Waiters extends Component {
                             <p className="textOrder">Ingresando pedido de:</p>
                             <p id="clientName">{this.props.name}</p>
 
-                            <table id="tableOrder"class="table table-dark">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Producto</th>
-      <th scope="col">Precio</th>
-      <th scope="col">Eliminar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Hamburguesa simple con queso</td>
-      <td>$2000</td>
-      <td ><img className="iconGarbage" src="https://i.ibb.co/JBJySWC/rubbish-bin.png" alt="rubbish-bin" border="0"/></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Papas Fritas</td>
-      <td>$500</td>
-      <td><img className="iconGarbage" src="https://i.ibb.co/JBJySWC/rubbish-bin.png" alt="rubbish-bin" border="0"/></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Bebida 350ml</td>
-      <td>$700</td>
-      <td><img className="iconGarbage" src="https://i.ibb.co/JBJySWC/rubbish-bin.png" alt="rubbish-bin" border="0"/></td>
-    </tr>
-    <tr>
-        <th scope="row">4</th>
-        <th>Total</th>
-        <th>$3200</th>
-    </tr>
+                            <table id="tableOrder" class="table table-dark">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Producto</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Hamburguesa simple con queso</td>
+                                        <td>$2000</td>
+                                        <td ><img className="iconGarbage" src="https://i.ibb.co/JBJySWC/rubbish-bin.png" alt="rubbish-bin" border="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Papas Fritas</td>
+                                        <td>$500</td>
+                                        <td><img className="iconGarbage" src="https://i.ibb.co/JBJySWC/rubbish-bin.png" alt="rubbish-bin" border="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Bebida 350ml</td>
+                                        <td>$700</td>
+                                        <td><img className="iconGarbage" src="https://i.ibb.co/JBJySWC/rubbish-bin.png" alt="rubbish-bin" border="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <th>Total</th>
+                                        <th>$3200</th>
+                                        <th></th>
+                                    </tr>
 
-  </tbody>
-</table>
+                                </tbody>
+                            </table>
 
                         </div>
 

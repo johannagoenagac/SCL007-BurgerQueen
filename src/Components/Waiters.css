@@ -6,8 +6,6 @@
    
 }
 
-
-
 #waitersBtn, #kitchenBtn{
     border-radius: 5px;
     margin: 2rem;
@@ -16,8 +14,6 @@
     font-family: sans-serif;
     font-family: sans-serif;
 }
-
-
 
 #clientName{
     color:white;
@@ -34,10 +30,15 @@ position: relative;
 }
 
 .table.table.table-dark{
-    background-color:rgb(165, 41, 41);
+    background-color:rgb(14, 13, 13);
+    color: white;
+    border: 1px solid white;
+    width: 400px;
+    height: 350px;
 }
 
 .iconGarbage{
     width: 25px;
     height: 25px;
+    background-color:rgb(192, 58, 17);
 }

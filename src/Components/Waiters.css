@@ -29,16 +29,18 @@ position: relative;
     font-family: sans-serif;
 }
 
-.table.table.table-dark{
+ .table.table.table-dark{
     background-color:rgb(14, 13, 13);
     color: white;
-    border: 1px solid white;
-    width: 400px;
-    height: 350px;
-}
+    border: 1px solid white; 
+    width: 500px;
+    
+}  
 
 .iconGarbage{
     width: 25px;
     height: 25px;
     background-color:rgb(192, 58, 17);
+    border-radius: 5px;
 }
+

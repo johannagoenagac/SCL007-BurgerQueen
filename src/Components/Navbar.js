@@ -8,7 +8,7 @@ class Navbar extends Component {
         
   <nav id="navbar">
     <div className="nav-wrapper">
-      <a  href="./Navbar.js" className="brand-logo">Burger Queen</a>
+      <a  href="./Navbar.js" className="brand-logo"><img className="burgerLogo" src="http://i67.tinypic.com/292pilz.png"alt="logotype.png"/></a>
       </div>
 
   </nav>    

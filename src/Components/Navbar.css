@@ -1,8 +1,8 @@
 .brand-logo{
-    margin-top: 2rem;
-    color: rgb(165, 41, 41);
-    font-size: 30px;
-    font-family: sans-serif;
+   width: 60px;
+   height: 60px;
+    
+    
   }
 
 #hamburguer{
@@ -18,4 +18,9 @@
   
   #navbar2{
     background-color: rgb(14, 13, 13);
+    
+  }
+
+  .burgerLogo{
+    margin-top: 1.5rem;
   }

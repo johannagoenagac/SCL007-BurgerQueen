@@ -16,15 +16,18 @@ export default class Breakfast extends Component{
         const menu = (data.breakfast).map((item) => {
             return (
                 <button id="BtnBreak" type="button" className="btn btn-success btn-lg btn-menu"
-                data-type={item.type}
+                data-name={item.name}
                 data-price={item.price}
-                onClick={this.props.getOption}>
-                {item.type}<br/>{item.price}
+                onClick={()=>this.props.getOption(item)}
+                >
+                {item.name}<br/>{item.price}
                 </button>
             );
         });
         return menu;
     }
+
+   
 
     render(){        
         return(

@@ -5,6 +5,8 @@ import BtnBreakfast from './BtnBreakfast';
 import Breakfast from './Breakfast';
 import Meal from './Meal';
 import BtnMeal from './BtnMeal';
+// import { throwStatement } from '@babel/types';
+import Orders from './Orders';
 
 
 class Waiters extends Component {
@@ -16,12 +18,26 @@ class Waiters extends Component {
             BtnMeals: false,
             handleChangeName: props.handleChangeName,
             onNameSelected: props.onNameSelected,
+            printOrder:[],
         };
 
         this.handleClick = this.handleClick.bind(this);
         this.breakfastBtn = this.breakfastBtn.bind(this);
         this.MealBtn = this.MealBtn.bind(this);
+        this.getOrder = this.getOrder.bind(this);
+    }
 
+
+
+    getOrder(item){
+        const print = this.state.printOrder;
+        print.push(item)
+        this.setState({
+            ...this.state,
+            printOrder:print
+            
+
+        })
     }
 
     handleClick(event) {
@@ -52,6 +68,8 @@ class Waiters extends Component {
         })
     }
 
+  
+
     render() {
         return (
 
@@ -80,13 +98,15 @@ class Waiters extends Component {
 
                                 <BtnBreakfast
                                     onClick={this.breakfastBtn} />
-                                {this.state.BtnBreak && <Breakfast />}
-
+                                {this.state.BtnBreak && <Breakfast 
+                                getOption={this.getOrder}/>
+                                } 
 
                                 <BtnMeal
                                     onClick={this.MealBtn} />
-                                {this.state.BtnMeals && <Meal />}
-
+                                {this.state.BtnMeals && <Meal 
+                                getOption={this.getOrder}/>
+                                }
 
 
                             </div>
@@ -103,44 +123,7 @@ class Waiters extends Component {
                             <h2 id="kitchenBtn">Cocina</h2>
                             <p className="textOrder">Ingresando pedido de:</p>
                             <p id="clientName">{this.props.name}</p>
-
-                            <table id="tableOrder" class="table table-dark">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Producto</th>
-                                        <th scope="col">Precio</th>
-                                        <th scope="col">Eliminar</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Hamburguesa simple con queso</td>
-                                        <td>$2000</td>
-                                        <td ><img className="iconGarbage" src="https://i.ibb.co/JBJySWC/rubbish-bin.png" alt="rubbish-bin" border="0" /></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Papas Fritas</td>
-                                        <td>$500</td>
-                                        <td><img className="iconGarbage" src="https://i.ibb.co/JBJySWC/rubbish-bin.png" alt="rubbish-bin" border="0" /></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Bebida 350ml</td>
-                                        <td>$700</td>
-                                        <td><img className="iconGarbage" src="https://i.ibb.co/JBJySWC/rubbish-bin.png" alt="rubbish-bin" border="0" /></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <th>Total</th>
-                                        <th>$3200</th>
-                                        <th></th>
-                                    </tr>
-
-                                </tbody>
-                            </table>
+                            <Orders items={this.state.printOrder}/>
 
                         </div>
 

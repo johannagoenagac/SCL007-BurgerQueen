@@ -19,7 +19,7 @@ export default class Meal extends Component{
                 data-name={item.name}
                 data-type={item.type}
                 data-price={item.price}
-                onClick={this.props.getOption}>
+                onClick={()=>this.props.getOption(item)}>
                 {item.name}<br/>{item.type}<br/>{item.price}
                 </button>
             );

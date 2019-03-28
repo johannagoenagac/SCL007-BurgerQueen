@@ -2,19 +2,19 @@
     "data": {
         "breakfast": [
             {
-                "type": "café americano",
+                "name": "café americano",
                 "price": 500
             },  
             {
-                "type": "café con leche",
+                "name": "café con leche",
                 "price": 700
             },
             {
-                "type": "sandwich de jamón con queso",
+                "name": "sandwich de jamón con queso",
                 "price": 1000
             },
             {
-                "type": "jugo Natural",
+                "name": "jugo Natural",
                 "price": 700
             }
         ],

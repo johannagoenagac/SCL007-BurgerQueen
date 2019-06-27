@@ -5,7 +5,7 @@ function NameForm (props) {
 
   
       return (
-        <form >
+        <form id="form-name">
          
            
             <input id="client" type="text" value={props.name} placeholder="Nombre del cliente" onChange={props.onChange} />

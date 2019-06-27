@@ -1,0 +1,23 @@
+#orderContainer{
+    background-color: brown;
+    width:350px;
+    height: 350px;
+    margin: 10px;
+
+}
+
+#name{
+    color: #fff;
+    font-size: 25px;
+}
+
+
+
+#listOrder{
+    list-style: none;
+    font-size: 20px;
+}
+
+.fas.fa-check-square{
+    font-size :30px;
+}

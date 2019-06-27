@@ -2,53 +2,31 @@ import React, { Component } from 'react';
 import './Orders.css';
 
 class Orders extends Component {
-    constructor(props) {
-        super(props);
-        this.props = { ...props }
-        this.state = {
-            ordersArray: [],
-            total: 0,
-        }
-    }
-
-    componentDidUpdate(props) {
-        //this.props = {...this.props, props};
-        if (props.items.length !== this.state.ordersArray.length) {
-            this.setState((state, props) => {
-                return { ordersArray: props.items }
-            });
-
-        }
-    }
-
-    render() {
-        let newSum = 0;
-        for (let i = 0; i < this.state.ordersArray.length; i++) {
-            newSum += this.state.ordersArray[i].price
-
-        }
-        if (newSum !== this.state.sum) {
-            this.setState({ sum: newSum })
-        }
-        let items = this.state.ordersArray.map((e) => {
+    
+    
+    asd2() {
+        let items = this.props.items.map((e) => {
             return (
                 <React.Fragment>
                     
-                    <tr>
-                        <td>{e.name}</td>
-                        <td>{e.type}</td>
-                        <td>{e.price}</td>
-                        <td><i class="fas fa-trash-alt"></i></td>
-                    </tr>
-                </React.Fragment>
-            )
-        });
-
-
+                <tr>
+                    <td key={e.name}>{e.name}</td>
+                    <td key={e.type}>{e.type}</td>
+                    <td key={e.price}>{e.price}</td>
+                    <td><button onClick={()=>this.props.delete2(e)}><i class="fas fa-trash-alt" ></i></button></td>
+                </tr>
+            </React.Fragment>
+        )
+    })
+    return items;
+}
+    render() {
+        
+           
         return (
 
             <React.Fragment>
-                 <table id="tableOrder" class="table table-dark"> 
+                 <table id="tableOrder" className="table table-dark"> 
                     <thead>
                         <tr>
                             <th scope="col">Producto</th>
@@ -59,16 +37,21 @@ class Orders extends Component {
                     </thead>
                     <tbody>
 
-                        {items}
+                        {this.asd2()}
+                        
                          
-                    </tbody>     
+                    </tbody>    
+
                 </table>
-                <h2 id="sum">Total: {this.state.sum}</h2>
                 
-               
+                <h2 id="sum">Total: {this.props.total}</h2>
+                <div id="buttons">
+                <button id="sendKitchen" onClick={this.props.firebase}><strong>Enviar a cocina</strong></button>
+                <button id="showKitchen" onClick={this.props.btnKitchen}><strong>Mostrar Cocina</strong></button>
+                </div>
             </React.Fragment>
         );
     }
-}
 
+}
 export default Orders;

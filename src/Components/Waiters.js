@@ -5,8 +5,10 @@ import BtnBreakfast from './BtnBreakfast';
 import Breakfast from './Breakfast';
 import Meal from './Meal';
 import BtnMeal from './BtnMeal';
-// import { throwStatement } from '@babel/types';
 import Orders from './Orders';
+import { database } from './provider';
+import Kitchen from './Kitchen';
+
 
 
 class Waiters extends Component {
@@ -18,27 +20,93 @@ class Waiters extends Component {
             BtnMeals: false,
             handleChangeName: props.handleChangeName,
             onNameSelected: props.onNameSelected,
-            printOrder:[],
+            printOrder: [],
+            btnShowKitchen:false,
+            total: 0,
+
         };
 
         this.handleClick = this.handleClick.bind(this);
         this.breakfastBtn = this.breakfastBtn.bind(this);
         this.MealBtn = this.MealBtn.bind(this);
         this.getOrder = this.getOrder.bind(this);
+        this.handleFirebase = this.handleFirebase.bind(this);
+        this.showKitchen=this.showKitchen.bind(this);
+        this.delete = this.delete.bind(this);
+    }
+
+   
+    
+    showKitchen(){
+        console.log('oli')
+        this.setState({
+            ...this.state,
+            btnShowKitchen:true,
+
+           
+        })
+    }
+
+    handleFirebase() {
+
+        const order = {
+            name: this.props.name,
+            order: this.state.printOrder
+            
+            // this.setState({
+            //     ...this.state,
+            //     printOrder:[]
+            // })
+
+        };
+        console.log(order);
+        let newPostKey = database.ref('kitchen').push().key;
+
+        let updates = {};
+        updates['kitchen/' + newPostKey] = order;
+
+        return database.ref().update(updates, () => {
+            this.setState({
+                ...this.state,
+                printOrder: [],
+                total: 0,
+               
+            })
+        });
     }
 
 
-
-    getOrder(item){
+    getOrder(item) {
         const print = this.state.printOrder;
         print.push(item)
         this.setState({
             ...this.state,
-            printOrder:print
-            
+            printOrder: print,
+            total: this.state.total + item.price,
+
 
         })
     }
+
+    delete(e){
+        //console.log('iii')
+        const copyArr = this.state.printOrder;
+        const deleteTotal = this.state.total-e.price;
+        let indice = copyArr.indexOf(e);
+        copyArr.splice(indice,1)
+        console.log(copyArr)
+        //if (copyArr.length > 1) {
+        this.setState({
+            printOrder: copyArr,
+            total: deleteTotal,
+        })
+    // }else {
+    //     this.setState({
+    //         printOrder: [],
+    //         total: 0
+    //     })
+    // }
+}
 
     handleClick(event) {
         this.setState({
@@ -68,12 +136,14 @@ class Waiters extends Component {
         })
     }
 
-  
+
 
     render() {
         return (
 
             <div className="container" id="sections">
+
+            {!this.state.btnShowKitchen &&
                 <div className="row">
 
 
@@ -98,14 +168,14 @@ class Waiters extends Component {
 
                                 <BtnBreakfast
                                     onClick={this.breakfastBtn} />
-                                {this.state.BtnBreak && <Breakfast 
-                                getOption={this.getOrder}/>
-                                } 
+                                {this.state.BtnBreak && <Breakfast
+                                    getOption={this.getOrder} />
+                                }
 
                                 <BtnMeal
                                     onClick={this.MealBtn} />
-                                {this.state.BtnMeals && <Meal 
-                                getOption={this.getOrder}/>
+                                {this.state.BtnMeals && <Meal
+                                    getOption={this.getOrder} />
                                 }
 
 
@@ -123,14 +193,25 @@ class Waiters extends Component {
                             <h2 id="kitchenBtn">Cocina</h2>
                             <p className="textOrder">Ingresando pedido de:</p>
                             <p id="clientName">{this.props.name}</p>
-                            <Orders items={this.state.printOrder}/>
+                            <Orders items={this.state.printOrder}
+                                firebase={this.handleFirebase}
+                                btnKitchen={this.showKitchen}
+                                total={this.state.total}
+                                delete2={this.delete}
+                                
+                            />
+
+                            {this.state.functionbtn}
+
 
                         </div>
 
                     </div>
 
-                </div>
+                </div>}
 
+                    {this.state.btnShowKitchen &&
+                    <Kitchen/>}
             </div>
 
         );
@@ -138,5 +219,8 @@ class Waiters extends Component {
 }
 
 
+
+     
+    
 
 export default Waiters;

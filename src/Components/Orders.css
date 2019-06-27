@@ -9,3 +9,33 @@
     color:white;
     font-size: 20px;
 }
+
+#buttons{
+    display: flex;
+    margin:0 auto;
+    justify-content: center;
+}
+
+#sendKitchen{
+    border-radius: 5px;
+    /* margin-left: 0.5rem; */
+    background-color: rgb(192, 58, 17);
+    color:white;
+    height: 3rem;
+    margin: 0.5rem;
+    margin-top: 1rem;
+}
+
+#showKitchen{
+    border-radius: 5px;
+    background-color: #fff;
+    color: #c03a11;
+    height: 3rem;
+    border-color:#c03a11;
+    margin-top: 1rem;
+}
+
+#sendKitchen, #showKitchen{
+    width: 12rem;
+    text-align: center;
+}
